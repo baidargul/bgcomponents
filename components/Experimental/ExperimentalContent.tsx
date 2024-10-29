@@ -9,13 +9,7 @@ const ExperimentalContent = (props: Props) => {
       <div className="opacity-60 tracking-wider py-1 border-y pointer-events-none select-none text-center mb-2">
         Experimental Content
       </div>
-      <div>
-        <WindowImage
-          imageUrl="/images/me-raw.png"
-          size="base"
-          intensity={420}
-        />
-      </div>
+      <div></div>
     </div>
   );
 };
