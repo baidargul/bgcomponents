@@ -6,6 +6,7 @@ type Props = {
   intensity?: number;
   imageUrl?: string;
   size?: "small" | "base" | "medium" | "large" | "xlarge";
+  className?: string;
 };
 
 const WindowImage = (props: Props) => {
@@ -62,7 +63,9 @@ const WindowImage = (props: Props) => {
 
   return (
     <div
-      className={`object-cover my-4 ${size} rounded-full border-transparent ring-[2px] ring-zinc-400 ${ringOffset} overflow-hidden`}
+      className={`object-cover my-4 ${size} rounded-full border-transparent ring-[2px] ring-zinc-400 ${ringOffset} overflow-hidden ${
+        props.className && props.className
+      }`}
     >
       <Image
         src={props.imageUrl ? props.imageUrl : "/images/sample.jpg"}
