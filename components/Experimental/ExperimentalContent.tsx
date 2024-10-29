@@ -1,5 +1,5 @@
 import React from "react";
-import WindowImage from "./_components/WindowImage";
+import AddNoise from "./_components/AddNoise";
 
 type Props = {};
 
