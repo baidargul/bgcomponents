@@ -18,7 +18,7 @@ const WindowImage = (props: Props) => {
       const x = e.clientX - window.innerWidth / 2;
       const y = e.clientY - window.innerHeight / 2;
 
-      const threshold = props.intensity ? props.intensity : 120;
+      const threshold = props.intensity || 120;
 
       setTranslateX(`${x / threshold}px`);
       setTranslateY(`${y / threshold}px`);
@@ -71,7 +71,7 @@ const WindowImage = (props: Props) => {
         height={800}
         quality={100}
         alt="sampleImage"
-        className="object-cover w-full h-full transition-transform duration-300 ease-out"
+        className="object-cover w-full h-full transition-transform duration-300 ease-out select-none pointer-events-none"
         style={{
           transform: `translate(${translateX}, ${translateY})`,
         }}
