@@ -1,5 +1,4 @@
 import React from "react";
-import AddNoise from "./_components/AddNoise";
 
 type Props = {};
 
