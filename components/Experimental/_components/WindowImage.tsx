@@ -6,6 +6,7 @@ import "./style.css";
 type Props = {
   intensity?: number;
   imageUrl?: string;
+  size?: "small" | "base" | "medium" | "large" | "xlarge";
 };
 
 const WindowImage = (props: Props) => {
@@ -30,8 +31,40 @@ const WindowImage = (props: Props) => {
     };
   }, []);
 
+  let size = "";
+  let ringOffset = "";
+
+  switch (props.size) {
+    case "small":
+      size = "w-[100px] h-[150px]";
+      ringOffset = "ring-offset-[8px]";
+      break;
+    case "base":
+      size = "w-[200px] h-[300px]";
+      ringOffset = "ring-offset-[14px]";
+      break;
+    case "medium":
+      size = "w-[300px] h-[450px]";
+      ringOffset = "ring-offset-[14px]";
+      break;
+    case "large":
+      size = "w-[400px] h-[600px]";
+      ringOffset = "ring-offset-[18px]";
+      break;
+    case "xlarge":
+      size = "w-[500px] h-[750px]";
+      ringOffset = "ring-offset-[24px]";
+      break;
+    default:
+      size = "w-[300px] h-[450px]";
+      ringOffset = "ring-offset-[14px]";
+      break;
+  }
+
   return (
-    <div className="object-cover w-[300px] h-[450px] rounded-full border-transparent ring-[2px] ring-zinc-400 ring-offset-[14px] overflow-hidden">
+    <div
+      className={`object-cover ${size} rounded-full border-transparent ring-[2px] ring-zinc-400 ${ringOffset} overflow-hidden`}
+    >
       <Image
         src={props.imageUrl ? props.imageUrl : "/images/sample.jpg"}
         width={800}

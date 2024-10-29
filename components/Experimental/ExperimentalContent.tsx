@@ -10,7 +10,7 @@ const ExperimentalContent = (props: Props) => {
         Experimental Content
       </div>
       <div>
-        <WindowImage imageUrl="/images/me-raw.png" />
+        <WindowImage imageUrl="/images/me-raw.png" size="base" />
       </div>
     </div>
   );
