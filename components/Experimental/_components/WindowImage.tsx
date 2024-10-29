@@ -62,7 +62,7 @@ const WindowImage = (props: Props) => {
 
   return (
     <div
-      className={`object-cover ${size} rounded-full border-transparent ring-[2px] ring-zinc-400 ${ringOffset} overflow-hidden`}
+      className={`object-cover my-4 ${size} rounded-full border-transparent ring-[2px] ring-zinc-400 ${ringOffset} overflow-hidden`}
     >
       <Image
         src={props.imageUrl ? props.imageUrl : "/images/sample.jpg"}

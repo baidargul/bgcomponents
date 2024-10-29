@@ -22,7 +22,7 @@ const AddNoise = (props: Props) => {
           height: "100%",
           backgroundImage: "url('/noise.gif')",
           opacity: 0.1,
-          zIndex: -1,
+          zIndex: 999,
         }}
         className={`${props.className && props.className}`}
       ></div>
