@@ -7,6 +7,7 @@ type Props = {
   labelColor?: string;
   lineColor?: string;
   labelSize?: "small" | "medium" | "large";
+  labelPosition?: "center" | "left" | "right";
 };
 
 const Seperator = (props: Props) => {
@@ -33,11 +34,30 @@ const Seperator = (props: Props) => {
       labelSize = "text-sm";
   }
 
+  let position = "justify-center items-start";
+  switch (props.labelPosition) {
+    case "center":
+      position = "justify-center items-center";
+      break;
+
+    case "left":
+      position = "justify-start items-center";
+      break;
+
+    case "right":
+      position = "justify-end items-center";
+      break;
+
+    default:
+      position = "justify-center items-center";
+      break;
+  }
+
   return (
-    <div className="relative flex justify-center items-center w-full select-none">
+    <div className={`relative flex ${position} w-full select-none`}>
       {props.label && props.label.length > 0 && (
         <div
-          className={`absolute  ${labelSize} ${labelColor} ${labelBackgroundColor} rounded-full py-2 flex justify-center items-center px-8 ${
+          className={`absolute  ${labelSize} ${labelColor} ${labelBackgroundColor} rounded-full py-2 ${position} flex px-8 ${
             props.className && props.className
           }`}
         >
