@@ -10,7 +10,7 @@ import NewsSection from "@/components/NewsSection";
 export default function Home() {
   return (
     <div className="w-full flex flex-col">
-      <div className="grid grid-cols-3 justify-items-center p-10 group ">
+      <div className="grid grid-cols-3 justify-items-center items-center place-items-center p-10 group ">
         <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
           <WiggleWrapper>
             <MouseGravity intensity={15}>
@@ -56,7 +56,7 @@ export default function Home() {
           </WiggleWrapper>
         </div>
         <WiggleWrapper>
-          <WindowImage size="medium" />
+          <WindowImage size="medium" className="w-[600px]" />
         </WiggleWrapper>
         <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 -skew-x-2 transition-all duration-1000 ease-in-out">
           <WiggleWrapper>
