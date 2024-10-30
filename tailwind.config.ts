@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         site: {
           text: "#4C4C4C",
+          textSelection: "#cecece",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",

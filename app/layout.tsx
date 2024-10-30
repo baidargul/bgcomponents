@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-site-text`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-site-text selection:bg-site-textSelection  selection:tracking-tighter`}
       >
         <AddNoise opacity={0.4} />
         {children}
