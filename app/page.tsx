@@ -3,6 +3,7 @@ import BackgroundWave from "@/components/Experimental/_components/BackgroundWave
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
 import Section from "@/components/Experimental/_components/Section";
 import Seperator from "@/components/Experimental/_components/Seperator";
+import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
 import NewsSection from "@/components/NewsSection";
 
@@ -10,74 +11,90 @@ export default function Home() {
   return (
     <div className="w-full flex flex-col">
       <div className="grid grid-cols-3 justify-items-center p-10 group ">
-        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-sm scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
-          <MouseGravity intensity={30}>
-            <NewsSection
-              style="general"
-              title="Biography"
-              description="I help startups connect with their audience. Focuses on creating
+        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
+          <WiggleWrapper>
+            <MouseGravity intensity={15}>
+              <NewsSection
+                style="general"
+                title="Biography"
+                description="I help startups connect with their audience. Focuses on creating
               smooth, intuitive experiences that make digital products easy to
               use and impactful. I'm Known for my practical approach and
               reliability, to delivers solutions that work for both users and
               businesses."
-            />
-          </MouseGravity>
-          <MouseGravity intensity={50}>
-            <NewsSection
-              style="general"
-              title="Contact"
-              description={[
-                "Gul Mobiles,",
-                "Shaheed Road, Jhang",
-                "+92 3438 7934 71",
-              ]}
-            />
-          </MouseGravity>
-          <MouseGravity intensity={100}>
-            <NewsSection
-              style="general"
-              title="Services"
-              description={[
-                "Custom Website Design & Development",
-                "eCommerce Solutions",
-                "Website Maintenance & Updates",
-                "SEO & Content Strategy",
-                "Mobile-Friendly & Responsive Design",
-                "Web App Development",
-              ]}
-            />
-          </MouseGravity>
+              />
+            </MouseGravity>
+          </WiggleWrapper>
+          <WiggleWrapper>
+            <MouseGravity intensity={20}>
+              <NewsSection
+                style="general"
+                title="Contact"
+                description={[
+                  "Gul Mobiles,",
+                  "Shaheed Road, Jhang",
+                  "+92 3438 7934 71",
+                ]}
+              />
+            </MouseGravity>
+          </WiggleWrapper>
+          <WiggleWrapper>
+            <MouseGravity intensity={25}>
+              <NewsSection
+                style="general"
+                title="Services"
+                description={[
+                  "Custom Website Design & Development",
+                  "eCommerce Solutions",
+                  "Website Maintenance & Updates",
+                  "SEO & Content Strategy",
+                  "Mobile-Friendly & Responsive Design",
+                  "Web App Development",
+                ]}
+              />
+            </MouseGravity>
+          </WiggleWrapper>
         </div>
-        <WindowImage size="medium" />
-        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-sm scale-0 -skew-x-2 transition-all duration-1000 ease-in-out">
-          <MouseGravity intensity={15}>
-            <NewsSection
-              style="focused"
-              title="Years of experience"
-              description="8"
-            />
-          </MouseGravity>
-          <MouseGravity intensity={20}>
-            <NewsSection
-              style="focused"
-              title="Satisfied Clients"
-              description="100%"
-            />
-          </MouseGravity>
-          <MouseGravity intensity={25}>
-            <NewsSection
-              style="focused"
-              title="Clients worldwide"
-              description="36"
-            />
-          </MouseGravity>
-          <MouseGravity intensity={40}>
-            <NewsSection
-              style="focused"
-              title="Projects Closed"
-              description="375"
-            />
-          </MouseGravity>
+        <WiggleWrapper>
+          <WindowImage size="medium" />
+        </WiggleWrapper>
+        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 -skew-x-2 transition-all duration-1000 ease-in-out">
+          <WiggleWrapper>
+            <MouseGravity intensity={15}>
+              <NewsSection
+                style="focused"
+                title="Years of experience"
+                description="8"
+              />
+            </MouseGravity>
+          </WiggleWrapper>
+          <WiggleWrapper>
+            <MouseGravity intensity={20}>
+              <NewsSection
+                style="focused"
+                title="Satisfied Clients"
+                description="100%"
+              />
+            </MouseGravity>
+          </WiggleWrapper>
+          <WiggleWrapper>
+            <MouseGravity intensity={25}>
+              <NewsSection
+                style="focused"
+                title="Clients worldwide"
+                description="36"
+              />
+            </MouseGravity>
+          </WiggleWrapper>
+          <WiggleWrapper>
+            <MouseGravity intensity={40}>
+              <NewsSection
+                style="focused"
+                title="Projects Closed"
+                description="375"
+              />
+            </MouseGravity>
+          </WiggleWrapper>
         </div>
       </div>
       <div className="bg-zinc-50 ">
