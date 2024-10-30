@@ -8,7 +8,7 @@ type Props = {
   children: React.ReactNode;
 };
 const WiggleWrapper = (props: Props) => {
-  const { shakeAmount = 3, duration = 0.4, children } = props;
+  const { shakeAmount = 3, duration = 0.8, children } = props;
   const wiggleRef = useRef(null);
 
   useEffect(() => {
