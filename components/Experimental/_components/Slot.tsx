@@ -5,6 +5,7 @@ type Props = {
   text?: string;
   position: "center" | "first" | "last";
   reverse?: boolean;
+  animate?: boolean;
 };
 
 const Slot = (props: Props) => {
@@ -16,21 +17,33 @@ const Slot = (props: Props) => {
 
   if (props.position === "center") {
     return (
-      <div className={`flex flex-col p-4 pr-8 ${border} border-y-2`}>
+      <div
+        className={`flex flex-col p-4 ${
+          props.animate && "hover:py-6"
+        } transition-all duration-300 pr-8 ${border} border-y-2`}
+      >
         <div className="text-2xl">Icon</div>
         <div className="text-sm">Text</div>
       </div>
     );
   } else if (props.position === "first") {
     return (
-      <div className={`flex flex-col p-4 pr-8 ${border}`}>
+      <div
+        className={`flex flex-col p-4 ${
+          props.animate && "hover:py-6"
+        } transition-all duration-300 pr-8 ${border}`}
+      >
         <div className="text-2xl">Icon</div>
         <div className="text-sm">Text</div>
       </div>
     );
   } else if (props.position === "last") {
     return (
-      <div className={`flex flex-col p-4 pr-8 ${border}`}>
+      <div
+        className={`flex flex-col p-4 ${
+          props.animate && " hover:py-6"
+        } transition-all duration-300 pr-8 ${border}`}
+      >
         <div className="text-2xl">Icon</div>
         <div className="text-sm">Text</div>
       </div>
