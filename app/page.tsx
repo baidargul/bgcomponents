@@ -3,6 +3,7 @@ import BackgroundWave from "@/components/Experimental/_components/BackgroundWave
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
 import Section from "@/components/Experimental/_components/Section";
 import Seperator from "@/components/Experimental/_components/Seperator";
+import Slot from "@/components/Experimental/_components/Slot";
 import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
 import NewsSection from "@/components/NewsSection";
@@ -107,7 +108,14 @@ export default function Home() {
             color="bg-zinc-100"
             zIndex={3}
           >
-            This is a section
+            <div className="grid grid-cols-[2fr_1fr]">
+              <div>Center</div>
+              <div>
+                <Slot position="first" />
+                <Slot position="center" />
+                <Slot position="last" />
+              </div>
+            </div>
           </Section>
           <Section zIndex={2} backgroundColor="bg-cyan-50" color="bg-zinc-200">
             <Seperator
