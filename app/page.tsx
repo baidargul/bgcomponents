@@ -1,3 +1,4 @@
+import AddNoise from "@/components/Experimental/_components/AddNoise";
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
 import Section from "@/components/Experimental/_components/Section";
@@ -7,8 +8,8 @@ import NewsSection from "@/components/NewsSection";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col min-h-[100dvh] overflow-hidden">
-      <div className="grid grid-cols-3 justify-items-center p-10 group">
+    <div className="w-full flex flex-col">
+      <div className="grid grid-cols-3 justify-items-center p-10 group ">
         <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-sm scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
           <MouseGravity intensity={30}>
             <NewsSection
@@ -79,38 +80,39 @@ export default function Home() {
           </MouseGravity>
         </div>
       </div>
-      <div className="w-full overflow-hidden">
-        <BackgroundWave />
+      <div className="bg-zinc-50 ">
+        <BackgroundWave color="bg-zinc-50" waveHeightResistance={1400} />
+        <div className="h-[110px]"></div>
+        <div className="px-10">
+          <Section
+            isFirst
+            backgroundColor="bg-cyan-50"
+            color="bg-zinc-100"
+            zIndex={3}
+          >
+            This is a section
+          </Section>
+          <Section zIndex={2} backgroundColor="bg-cyan-50" color="bg-zinc-200">
+            <Seperator
+              className="tracking-widest"
+              label="Projects"
+              labelBackgroundColor="bg-zinc-300"
+            />
+            <div className="flex gap-10 justify-center items-center mt-10">
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+              <WindowImage size="small" />
+            </div>
+          </Section>
+        </div>
       </div>
-      {/* <div className="mt-24">
-        <Section
-          isFirst
-          backgroundColor="bg-white"
-          color="bg-zinc-100"
-          zIndex={3}
-        >
-          This is a section
-        </Section>
-        <Section zIndex={2} backgroundColor="bg-white" color="bg-zinc-200">
-          <Seperator
-            className="tracking-widest"
-            label="Projects"
-            labelBackgroundColor="bg-zinc-300"
-          />
-          <div className="flex gap-10 justify-center items-center mt-10">
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-            <WindowImage size="small" />
-          </div>
-        </Section>
-      </div> */}
     </div>
   );
 }

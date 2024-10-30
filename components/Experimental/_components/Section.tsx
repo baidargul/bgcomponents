@@ -14,12 +14,12 @@ const Section = (props: Props) => {
 
   const backgroundColor = props.backgroundColor
     ? props.backgroundColor
-    : "bg-white";
-  const foregroundColor = props.color ? props.color : "bg-zinc-100";
+    : "bg-transparent";
+  const foregroundColor = props.color ? props.color : "bg-transparent";
 
   return (
     <div
-      className={`relative overflow-hidden -mt-24`}
+      className={`relative overflow-hidden -mt-24 bg-transparent`}
       style={{ zIndex: zIndex || 0 }}
     >
       <div
