@@ -83,7 +83,7 @@ export default function Home() {
       <div className="bg-zinc-50 ">
         <BackgroundWave color="bg-zinc-50" waveHeightResistance={1400} />
         <div className="h-[110px]"></div>
-        <div className="px-10">
+        <div className="px-10 mb-10">
           <Section
             isFirst
             backgroundColor="bg-cyan-50"
