@@ -37,7 +37,9 @@ const Seperator = (props: Props) => {
     <div className="relative flex justify-center items-center w-full select-none">
       {props.label && props.label.length > 0 && (
         <div
-          className={`absolute  ${labelSize} ${labelColor} ${labelBackgroundColor} rounded-full py-2 flex justify-center items-center px-8`}
+          className={`absolute  ${labelSize} ${labelColor} ${labelBackgroundColor} rounded-full py-2 flex justify-center items-center px-8 ${
+            props.className && props.className
+          }`}
         >
           {props.label}
         </div>

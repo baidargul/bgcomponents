@@ -25,7 +25,7 @@ const Section = (props: Props) => {
       <div
         className={`${foregroundColor} ${
           props.className && props.className
-        } w-[1200px] h-full rounded-b-[90px] ${
+        } w-full h-full rounded-b-[90px] ${
           props.isFirst ? "rounded-t-[90px]" : "pb-12 pt-32"
         } p-24`}
       >
