@@ -10,7 +10,7 @@ export default function Home() {
     <div className="w-full flex flex-col min-h-[100dvh] overflow-hidden">
       <div className="grid grid-cols-3 justify-items-center p-10 group">
         <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-sm scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
-          <MouseGravity>
+          <MouseGravity intensity={30}>
             <NewsSection
               style="general"
               title="Biography"
@@ -21,7 +21,7 @@ export default function Home() {
               businesses."
             />
           </MouseGravity>
-          <MouseGravity intensity={80}>
+          <MouseGravity intensity={50}>
             <NewsSection
               style="general"
               title="Contact"
@@ -32,7 +32,7 @@ export default function Home() {
               ]}
             />
           </MouseGravity>
-          <MouseGravity>
+          <MouseGravity intensity={100}>
             <NewsSection
               style="general"
               title="Services"
