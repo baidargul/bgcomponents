@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="w-full flex flex-col">
       <div className="grid grid-cols-3 justify-items-center items-center place-items-center p-10 group ">
-        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 skew-x-2 transition-all duration-1000   ease-in-out">
+        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg skew-x-2 transition-all duration-1000   ease-in-out">
           <WiggleWrapper>
             <MouseGravity intensity={15}>
               <NewsSection
@@ -58,8 +58,14 @@ export default function Home() {
         </div>
         <WiggleWrapper>
           <WindowImage size="medium" className="w-[600px]" />
+          <MouseGravity>
+            <div className="text-5xl flex items-center gap-1 justify-center font-semibold tracking-wide text-center mt-10 duration-1000 ease-in-out">
+              <div>I'M</div>
+              <div className="p-3 bg-zinc-200 rounded-md">BAIDAR GUL</div>
+            </div>
+          </MouseGravity>
         </WiggleWrapper>
-        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg scale-0 -skew-x-2 transition-all duration-1000 ease-in-out">
+        <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg -skew-x-2 transition-all duration-1000 ease-in-out">
           <WiggleWrapper>
             <MouseGravity intensity={15}>
               <NewsSection
@@ -124,16 +130,7 @@ export default function Home() {
               labelBackgroundColor="bg-zinc-300"
             />
             <div className="flex gap-10 justify-center items-center mt-10">
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
-              <WindowImage size="small" />
+              <div>Blank</div>
             </div>
           </Section>
         </div>
