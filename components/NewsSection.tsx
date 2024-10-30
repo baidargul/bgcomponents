@@ -1,4 +1,5 @@
 import React from "react";
+import MouseGravity from "./Experimental/_components/MouseGravity";
 
 type Props = {
   title: string;
@@ -41,11 +42,15 @@ const General = (props: Props) => {
 
 const Focused = (props: Props) => {
   return (
-    <div className="p-6 rounded-xl w-[300px] flex-col text-right flex justify-end items-end hover:rotate-2 hover:tracking-widest transition-all duration-100 ">
-      <div className="text-md tracking-widest mb-4 w-[60%]">{props.title}</div>
-      <div className="text-5xl  font-bold  leading-tight flex flex-col gap-0">
-        <div className="transition-all duration-200">{props.description}</div>
+    <MouseGravity>
+      <div className="p-6 rounded-xl w-[300px] flex-col text-right flex justify-end items-end hover:rotate-2 hover:tracking-widest transition-all duration-100 ">
+        <div className="text-md tracking-widest mb-4 w-[60%]">
+          {props.title}
+        </div>
+        <div className="text-5xl  font-bold  leading-tight flex flex-col gap-0">
+          <div className="transition-all duration-200">{props.description}</div>
+        </div>
       </div>
-    </div>
+    </MouseGravity>
   );
 };
