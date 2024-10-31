@@ -6,13 +6,14 @@ type Props = {
   position: "center" | "first" | "last";
   reverse?: boolean;
   animate?: boolean;
+  borderColor?: string;
 };
 
 const Slot = (props: Props) => {
   let border = "border-l-2";
 
   if (props.reverse) {
-    border = "border-r-2";
+    border = "border-r-2 justify-end items-end text-right";
   }
 
   if (props.position === "center") {
@@ -20,7 +21,9 @@ const Slot = (props: Props) => {
       <div
         className={`flex flex-col p-4 gap-2 ${
           props.animate && "hover:py-6"
-        } transition-all duration-300 pr-8 ${border} border-y-2`}
+        } transition-all duration-300 pr-8 ${border} ${
+          props.borderColor && props.borderColor
+        } border-y-2`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>
@@ -31,7 +34,9 @@ const Slot = (props: Props) => {
       <div
         className={`flex flex-col p-4 gap-2 ${
           props.animate && "hover:py-6"
-        } transition-all duration-300 pr-8 ${border}`}
+        } transition-all duration-300 pr-8 ${border} ${
+          props.borderColor && props.borderColor
+        }`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>
@@ -42,7 +47,9 @@ const Slot = (props: Props) => {
       <div
         className={`flex flex-col p-4 gap-2 ${
           props.animate && " hover:py-6"
-        } transition-all duration-300 pr-8 ${border}`}
+        } transition-all duration-300 pr-8 ${border} ${
+          props.borderColor && props.borderColor
+        }`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>

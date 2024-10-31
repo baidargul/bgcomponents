@@ -1,20 +1,9 @@
-import AddNoise from "@/components/Experimental/_components/AddNoise";
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
-import Section from "@/components/Experimental/_components/Section";
-import Seperator from "@/components/Experimental/_components/Seperator";
-import Slot from "@/components/Experimental/_components/Slot";
 import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
+import FrontendBackendServices from "@/components/FrontendBackendServices";
 import NewsSection from "@/components/NewsSection";
-import {
-  Fingerprint,
-  Keyboard,
-  Laptop,
-  Microchip,
-  Server,
-  ServerCrash,
-} from "lucide-react";
 
 export default function Home() {
   return (
@@ -115,45 +104,7 @@ export default function Home() {
       <div className="bg-zinc-50 ">
         <BackgroundWave color="bg-zinc-50" waveHeightResistance={1400} />
         <div className="h-[110px]"></div>
-        <div className="px-10 mb-10">
-          <Section
-            isFirst
-            backgroundColor="bg-cyan-50"
-            color="bg-zinc-100"
-            zIndex={3}
-          >
-            <div className="grid grid-cols-[2fr_1fr]">
-              <div>Center</div>
-              <div>
-                <Slot
-                  position="first"
-                  icon={<Keyboard />}
-                  label="All-in-One Development Solutions"
-                />
-                <Slot
-                  position="center"
-                  icon={<Server />}
-                  label="Seamless Server Operations & Deployment"
-                />
-                <Slot
-                  position="last"
-                  icon={<ServerCrash />}
-                  label="Reliable Disaster Management & Recovery"
-                />
-              </div>
-            </div>
-          </Section>
-          <Section zIndex={2} backgroundColor="bg-cyan-50" color="bg-zinc-200">
-            <Seperator
-              className="tracking-widest"
-              label="Projects"
-              labelBackgroundColor="bg-zinc-300"
-            />
-            <div className="flex gap-10 justify-center items-center mt-10">
-              <div>Blank</div>
-            </div>
-          </Section>
-        </div>
+        <FrontendBackendServices />
       </div>
     </div>
   );
