@@ -1,9 +1,11 @@
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
+import ProjectRow from "@/components/Experimental/_components/ProjectRow";
 import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
 import FrontendBackendServices from "@/components/FrontendBackendServices";
 import NewsSection from "@/components/NewsSection";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -105,6 +107,21 @@ export default function Home() {
         <BackgroundWave color="bg-zinc-50" waveHeightResistance={1400} />
         <div className="h-[110px]"></div>
         <FrontendBackendServices />
+      </div>
+      <div className="my-10">
+        <div>
+          <ProjectRow
+            index={1}
+            name="Earthlings"
+            description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
+            icon={
+              <ChevronRight
+                className="p-2 rounded-full border text-center flex justify-center items-center"
+                size={50}
+              />
+            }
+          />
+        </div>
       </div>
     </div>
   );

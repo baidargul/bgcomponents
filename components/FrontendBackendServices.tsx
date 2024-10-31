@@ -11,6 +11,7 @@ import {
   TabletSmartphone,
 } from "lucide-react";
 import Section from "./Experimental/_components/Section";
+import Highlighter from "./Experimental/_components/Highlighter";
 
 type Props = {};
 
