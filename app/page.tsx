@@ -128,17 +128,17 @@ export default function Home() {
                 <Slot
                   position="first"
                   icon={<Keyboard />}
-                  label="Cover your development needs"
+                  label="All-in-One Development Solutions"
                 />
                 <Slot
                   position="center"
                   icon={<Server />}
-                  label="Cover your operating needs"
+                  label="Seamless Server Operations & Deployment"
                 />
                 <Slot
                   position="last"
                   icon={<ServerCrash />}
-                  label="Protecting in the times of disasters "
+                  label="Reliable Disaster Management & Recovery"
                 />
               </div>
             </div>
