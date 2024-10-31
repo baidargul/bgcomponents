@@ -7,6 +7,14 @@ import Slot from "@/components/Experimental/_components/Slot";
 import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
 import NewsSection from "@/components/NewsSection";
+import {
+  Fingerprint,
+  Keyboard,
+  Laptop,
+  Microchip,
+  Server,
+  ServerCrash,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -117,9 +125,21 @@ export default function Home() {
             <div className="grid grid-cols-[2fr_1fr]">
               <div>Center</div>
               <div>
-                <Slot position="first" />
-                <Slot position="center" />
-                <Slot position="last" />
+                <Slot
+                  position="first"
+                  icon={<Keyboard />}
+                  label="Cover your development needs"
+                />
+                <Slot
+                  position="center"
+                  icon={<Server />}
+                  label="Cover your operating needs"
+                />
+                <Slot
+                  position="last"
+                  icon={<ServerCrash />}
+                  label="Protecting in the times of disasters "
+                />
               </div>
             </div>
           </Section>

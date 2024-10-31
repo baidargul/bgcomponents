@@ -1,8 +1,8 @@
 import React from "react";
 
 type Props = {
-  icon?: string;
-  text?: string;
+  icon?: string | React.ReactNode;
+  label?: string;
   position: "center" | "first" | "last";
   reverse?: boolean;
   animate?: boolean;
@@ -18,34 +18,34 @@ const Slot = (props: Props) => {
   if (props.position === "center") {
     return (
       <div
-        className={`flex flex-col p-4 ${
+        className={`flex flex-col p-4 gap-2 ${
           props.animate && "hover:py-6"
         } transition-all duration-300 pr-8 ${border} border-y-2`}
       >
-        <div className="text-2xl">Icon</div>
-        <div className="text-sm">Text</div>
+        <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
+        <div className="text-base">{props.label ? props.label : "Label"}</div>
       </div>
     );
   } else if (props.position === "first") {
     return (
       <div
-        className={`flex flex-col p-4 ${
+        className={`flex flex-col p-4 gap-2 ${
           props.animate && "hover:py-6"
         } transition-all duration-300 pr-8 ${border}`}
       >
-        <div className="text-2xl">Icon</div>
-        <div className="text-sm">Text</div>
+        <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
+        <div className="text-base">{props.label ? props.label : "Label"}</div>
       </div>
     );
   } else if (props.position === "last") {
     return (
       <div
-        className={`flex flex-col p-4 ${
+        className={`flex flex-col p-4 gap-2 ${
           props.animate && " hover:py-6"
         } transition-all duration-300 pr-8 ${border}`}
       >
-        <div className="text-2xl">Icon</div>
-        <div className="text-sm">Text</div>
+        <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
+        <div className="text-base">{props.label ? props.label : "Label"}</div>
       </div>
     );
   }
