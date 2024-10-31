@@ -11,13 +11,12 @@ import {
   TabletSmartphone,
 } from "lucide-react";
 import Section from "./Experimental/_components/Section";
-import MouseGravity from "./Experimental/_components/MouseGravity";
 
 type Props = {};
 
 const FrontendBackendServices = (props: Props) => {
   return (
-    <div className="grid grid-cols-[1fr]">
+    <div className="grid grid-cols-[1fr] select-none">
       <div></div>
       <div className="px-10 mb-10">
         <Section
@@ -31,11 +30,14 @@ const FrontendBackendServices = (props: Props) => {
               <div className="flex gap-8  justify-center items-center">
                 <div className="flex flex-col justify-center items-center gap-2">
                   <div>
-                    <Monitor size={80} />
+                    <Monitor
+                      size={80}
+                      className="group-hover:text-cyan-900 delay-1000 transition-all duration-1000"
+                    />
                   </div>
                   <div className="font-semibold text-3xl">Frontend</div>
                 </div>
-                <div className="text-5xl font-bold w-[60%] transition-all duration-500 group-hover:leading-snug">
+                <div className="text-5xl font-bold w-[60%] transition-all duration-500 group-hover:leading-snug delay-200">
                   Beautiful, Interactive Frontend Experiences
                 </div>
               </div>
@@ -45,19 +47,19 @@ const FrontendBackendServices = (props: Props) => {
                 position="first"
                 icon={<LaptopMinimal />}
                 label="Responsive, Engaging UI Design"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
               />
               <Slot
                 position="center"
                 icon={<MonitorCheck />}
                 label="Pixel Perfect, High Performance Web Apps"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
               />
               <Slot
                 position="last"
                 icon={<TabletSmartphone />}
                 label="User Friendly Experiences Across all Devices"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
               />
             </div>
           </div>
@@ -70,7 +72,7 @@ const FrontendBackendServices = (props: Props) => {
                 icon={<ServerCrash />}
                 label="Robust and Scalable Backend Architecture"
                 borderColor="border-zinc-300"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
                 reverse
               />
               <Slot
@@ -78,7 +80,7 @@ const FrontendBackendServices = (props: Props) => {
                 icon={<DatabaseZap />}
                 label="Efficient Data Management & API Integration"
                 borderColor="border-zinc-300"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
                 reverse
               />
               <Slot
@@ -86,7 +88,7 @@ const FrontendBackendServices = (props: Props) => {
                 icon={<Shield />}
                 label="24/7 Monitoring & Secure Disaster Recovery"
                 borderColor="border-zinc-300"
-                className="group-hover:tracking-tight delay-500"
+                className="group-hover:tracking-tight"
                 reverse
               />
             </div>
@@ -94,11 +96,14 @@ const FrontendBackendServices = (props: Props) => {
               <div className="flex gap-8 justify-center items-center">
                 <div className="flex flex-col justify-center items-center gap-2">
                   <div>
-                    <ServerCog size={80} />
+                    <ServerCog
+                      size={80}
+                      className="group-hover:text-blue-900 delay-1000 transition-all duration-300 ease-in-out"
+                    />
                   </div>
                   <div className="font-semibold text-3xl">Backend</div>
                 </div>
-                <div className="text-5xl font-bold w-[60%] transition-all duration-500 group-hover:leading-snug">
+                <div className="text-5xl font-bold w-[60%] transition-all duration-500 group-hover:leading-snug delay-200">
                   Fully Scalable Backend Architecture
                 </div>
               </div>
