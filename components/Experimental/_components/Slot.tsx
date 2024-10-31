@@ -7,6 +7,7 @@ type Props = {
   reverse?: boolean;
   animate?: boolean;
   borderColor?: string;
+  className?: string;
 };
 
 const Slot = (props: Props) => {
@@ -23,7 +24,7 @@ const Slot = (props: Props) => {
           props.animate && "hover:py-6"
         } transition-all duration-300 pr-8 ${border} ${
           props.borderColor && props.borderColor
-        } border-y-2`}
+        } border-y-2 ${props.className && props.className}`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>
@@ -36,7 +37,7 @@ const Slot = (props: Props) => {
           props.animate && "hover:py-6"
         } transition-all duration-300 pr-8 ${border} ${
           props.borderColor && props.borderColor
-        }`}
+        } ${props.className && props.className}`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>
@@ -49,7 +50,7 @@ const Slot = (props: Props) => {
           props.animate && " hover:py-6"
         } transition-all duration-300 pr-8 ${border} ${
           props.borderColor && props.borderColor
-        }`}
+        } ${props.className && props.className}`}
       >
         <div className="text-2xl">{props.icon ? props.icon : "Icon"}</div>
         <div className="text-base">{props.label ? props.label : "Label"}</div>
