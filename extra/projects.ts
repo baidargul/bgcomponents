@@ -14,7 +14,7 @@ export const Projects: ProjectType[] = [
     link: "https://socialedge.com/",
   },
   {
-    name: "Al Sarab Al Dhkkiya",
+    name: "Al Sarab Al Dhkiya",
     description:
       "An Omanian client who wanted a website for a local industrial business. It's a company that provides services to the oil and gas industry.",
     image: "/projects/al.png",
