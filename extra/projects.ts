@@ -41,4 +41,11 @@ export const Projects: ProjectType[] = [
     image: "/projects/breifcase.png",
     link: "",
   },
+  {
+    name: "Ajit Foundation",
+    description:
+      "A NGO website created in WordPress for collecting donations. I have created a script for them, to manipulate the functionality of GiveWp plugin and to add custom products as donate options.",
+    image: "/projects/ajitFoundation.png",
+    link: "https://theajitfoundation.org/",
+  },
 ];
