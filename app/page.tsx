@@ -5,6 +5,7 @@ import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
 import WindowImage from "@/components/Experimental/_components/WindowImage";
 import FrontendBackendServices from "@/components/FrontendBackendServices";
 import NewsSection from "@/components/NewsSection";
+import { Projects } from "@/extra/projects";
 import { ChevronRight } from "lucide-react";
 
 export default function Home() {
@@ -111,66 +112,26 @@ export default function Home() {
       <div className="my-10 grid grid-cols-[1.2fr_2fr]">
         <div>This is other container</div>
         <div>
-          <div className="border-y">
-            <ProjectRow
-              size="normal"
-              index={1}
-              name="Earthlings"
-              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
-              icon={
-                <ChevronRight
-                  className="p-2 rounded-full border text-center flex justify-center items-center"
-                  size={50}
+          {Projects.map((project, index) => {
+            return (
+              <div className="border-y" key={project.name}>
+                <ProjectRow
+                  size="normal"
+                  index={index + 1}
+                  name={project.name}
+                  description={project.description}
+                  image={project.image}
+                  icon={
+                    <ChevronRight
+                      className="p-2 rounded-full border text-center flex justify-center items-center"
+                      size={50}
+                    />
+                  }
+                  lineClamp="line-clamp-4"
                 />
-              }
-              lineClamp="line-clamp-4"
-            />
-          </div>
-          <div className="border-y">
-            <ProjectRow
-              size="normal"
-              index={1}
-              name="Earthlings"
-              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
-              icon={
-                <ChevronRight
-                  className="p-2 rounded-full border text-center flex justify-center items-center"
-                  size={50}
-                />
-              }
-              lineClamp="line-clamp-4"
-            />
-          </div>
-          <div className="border-y">
-            <ProjectRow
-              size="normal"
-              index={1}
-              name="Earthlings"
-              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
-              icon={
-                <ChevronRight
-                  className="p-2 rounded-full border text-center flex justify-center items-center"
-                  size={50}
-                />
-              }
-              lineClamp="line-clamp-4"
-            />
-          </div>
-          <div className="border-y">
-            <ProjectRow
-              size="normal"
-              index={1}
-              name="Earthlings"
-              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
-              icon={
-                <ChevronRight
-                  className="p-2 rounded-full border text-center flex justify-center items-center"
-                  size={50}
-                />
-              }
-              lineClamp="line-clamp-4"
-            />
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

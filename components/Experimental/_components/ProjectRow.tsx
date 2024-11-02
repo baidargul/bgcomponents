@@ -1,10 +1,12 @@
 import React from "react";
 import WiggleWrapper from "./WiggleWrapper";
+import MouseGravity from "./MouseGravity";
 
 type Props = {
   index?: number;
   name: string;
   description: string;
+  image: string;
   icon: string | React.ReactNode;
   onClick?: () => void;
   size?: "small" | "normal" | "medium" | "large";
@@ -15,6 +17,7 @@ const ProjectRow = ({
   index,
   name,
   description,
+  image,
   icon,
   onClick,
   size = "large",
@@ -61,21 +64,23 @@ const ProjectRow = ({
   return (
     <div className={`relative group cursor-pointer ${currentSize.height}`}>
       {/* Wrapper div with border styling */}
-      <div
-        className={`absolute right-2 rounded-md ${currentSize.imgSize} opacity-0 group-hover:opacity-100 transition-all duration-200`}
-        style={{ zIndex: 1 }} // Lower z-index so it appears behind the image
-      >
+      <MouseGravity>
         <div
-          className={`absolute ${currentSize.top} rounded-md drop-shadow-md bg-white ${currentSize.imgSize}`}
-          style={{ zIndex: 2 }} // Ensure the image appears above the border
+          className={`absolute hover:right-10 right-4 rounded-md ${currentSize.imgSize} opacity-0 group-hover:opacity-100 transition-all duration-200`}
+          style={{ zIndex: 1 }} // Lower z-index so it appears behind the image
         >
-          <img
-            src="/images/sample.jpg"
-            alt="project"
-            className={`object-cover ${currentSize.imgSize} rounded-md`}
-          />
+          <div
+            className={`absolute ${currentSize.top} rounded-md drop-shadow-md bg-white ${currentSize.imgSize}`}
+            style={{ zIndex: 2 }} // Ensure the image appears above the border
+          >
+            <img
+              src={image}
+              alt={`project-${name.toLocaleLowerCase()}`}
+              className={`object-cover ${currentSize.imgSize} rounded-md hover:scale-125 transition-all duration-300 select-none`}
+            />
+          </div>
         </div>
-      </div>
+      </MouseGravity>
 
       <div
         className={`static grid ${
