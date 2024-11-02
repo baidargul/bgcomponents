@@ -126,6 +126,51 @@ export default function Home() {
               lineClamp="line-clamp-4"
             />
           </div>
+          <div className="border-y">
+            <ProjectRow
+              size="normal"
+              index={1}
+              name="Earthlings"
+              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
+              icon={
+                <ChevronRight
+                  className="p-2 rounded-full border text-center flex justify-center items-center"
+                  size={50}
+                />
+              }
+              lineClamp="line-clamp-4"
+            />
+          </div>
+          <div className="border-y">
+            <ProjectRow
+              size="normal"
+              index={1}
+              name="Earthlings"
+              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
+              icon={
+                <ChevronRight
+                  className="p-2 rounded-full border text-center flex justify-center items-center"
+                  size={50}
+                />
+              }
+              lineClamp="line-clamp-4"
+            />
+          </div>
+          <div className="border-y">
+            <ProjectRow
+              size="normal"
+              index={1}
+              name="Earthlings"
+              description="NGO devoted to the rescue, shelter, and care of cows and buffaloes in need. Your donations help us provide food, medical support, and safe spaces for abandoned and injured animals. Together, we can ensure a healthier, happier future for these gentle beings."
+              icon={
+                <ChevronRight
+                  className="p-2 rounded-full border text-center flex justify-center items-center"
+                  size={50}
+                />
+              }
+              lineClamp="line-clamp-4"
+            />
+          </div>
         </div>
       </div>
     </div>

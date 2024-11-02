@@ -79,7 +79,7 @@ const ProjectRow = ({
 
       <div
         className={`static grid ${
-          index ? "grid-cols-[1fr_2fr_2fr_2fr]" : "grid-cols-3"
+          index ? "grid-cols-[.5fr_2fr_2fr_2fr]" : "grid-cols-3"
         } ${currentSize.padding} place-items-center w-full `}
       >
         {index && (
