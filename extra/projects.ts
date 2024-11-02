@@ -17,7 +17,14 @@ export const Projects: ProjectType[] = [
     name: "Al Sarab Al Dhkkiya",
     description:
       "An Omanian client who wanted a website for a local industrial business. It's a company that provides services to the oil and gas industry.",
-    image: "/projects/alsarab.om.png",
+    image: "/projects/al.png",
     link: "alsarab.om",
+  },
+  {
+    name: "Vegan Matrimonial",
+    description:
+      "A dating site for vegan couples. It's a platform that connects people who share a common interest in a healthy lifestyle.",
+    image: "/projects/vegan.png",
+    link: "https://veganmatrimonial.com/",
   },
 ];
