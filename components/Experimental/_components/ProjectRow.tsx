@@ -89,7 +89,9 @@ const ProjectRow = ({
             {index < 10 ? `0${index}` : index}
           </div>
         )}
-        <div className={`mr-auto font-bold ${currentSize.nameTextSize}`}>
+        <div
+          className={`mr-auto font-bold ${currentSize.nameTextSize} tracking-tight transform group-hover:skew-x-2 transition-all duration-300 delay-150`}
+        >
           {name}
         </div>
         <div
