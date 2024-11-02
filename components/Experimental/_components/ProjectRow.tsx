@@ -76,7 +76,7 @@ const ProjectRow = ({
             <img
               src={image}
               alt={`project-${name.toLocaleLowerCase()}`}
-              className={`object-cover ${currentSize.imgSize} rounded-md hover:scale-125 transition-all duration-300 select-none`}
+              className={`object-left-top object-cover ${currentSize.imgSize} rounded-md hover:scale-125 transition-all duration-300 select-none `}
             />
           </div>
         </div>

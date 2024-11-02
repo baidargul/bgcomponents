@@ -27,4 +27,11 @@ export const Projects: ProjectType[] = [
     image: "/projects/vegan.png",
     link: "https://veganmatrimonial.com/",
   },
+  {
+    name: "Maweshi Mandi",
+    description:
+      "A website to sell and bid on livestock/pet animals. It's an online marketplace that connects buyers and sellers.",
+    image: "/projects/murghi.png",
+    link: "https://murghimandi.vercel.app/",
+  },
 ];
