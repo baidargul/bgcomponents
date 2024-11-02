@@ -53,16 +53,22 @@ const ProjectRow = ({
   const currentSize = sizeStyles[size];
 
   return (
-    <div className="relative group cursor-pointer z-[2]">
+    <div className="relative group cursor-pointer">
+      {/* Wrapper div with border styling */}
       <div
-        className={`absolute ${currentSize.top} right-2 rounded-md drop-shadow-md bg-white opacity-0 group-hover:opacity-100 transition-all duration-200 ${currentSize.imgSize}`}
-        style={{ zIndex: 999 }}
+        className={`absolute right-2 rounded-md ${currentSize.imgSize} border-gray-300 opacity-0 group-hover:opacity-100 transition-all duration-200`}
+        style={{ zIndex: 1 }} // Lower z-index so it appears behind the image
       >
-        <img
-          src="/images/sample.jpg"
-          alt="project"
-          className={`object-cover ${currentSize.imgSize} rounded-md`}
-        />
+        <div
+          className={`absolute ${currentSize.top} rounded-md drop-shadow-md bg-white ${currentSize.imgSize}`}
+          style={{ zIndex: 2 }} // Ensure the image appears above the border
+        >
+          <img
+            src="/images/sample.jpg"
+            alt="project"
+            className={`object-cover ${currentSize.imgSize} rounded-md`}
+          />
+        </div>
       </div>
 
       <div
