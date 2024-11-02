@@ -34,4 +34,11 @@ export const Projects: ProjectType[] = [
     image: "/projects/murghi.png",
     link: "https://murghimandi.vercel.app/",
   },
+  {
+    name: "Breifcase",
+    description:
+      "A side project of mine, It's a web application that allows users to create and manage projects, assign tasks, and track progress. Still in development",
+    image: "/projects/breifcase.png",
+    link: "",
+  },
 ];
