@@ -228,6 +228,43 @@ const getCommandResponse = (command: string, setValue: any) => {
         { title: "exit", description: "Exits the console.", divider: ":" },
       ];
 
+    case "about":
+      return {
+        title: "About",
+        description:
+          "This is a terminal emulator built using React and Typescript.",
+        component: (
+          <div className="">
+            <div className="flex gap-1 items-center">
+              <div className="font-bold">Hello!</div>
+              <div>I'm Baidar Gul</div>
+            </div>
+            <div>
+              <div>Here's some facts about me:</div>
+              <div className="w-fit bg-zinc-100 p-1 pl-2 pr-8">
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ Website developer
+                </div>
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ App developer
+                </div>
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ WordPress developer
+                </div>
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ Typescript expert
+                </div>
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ Backend specialist
+                </div>
+                <div className="font-semibold text-[#6b7280] hover:text-green-800 drop-shadow-sm">
+                  ✅ Graphic designer
+                </div>
+              </div>
+            </div>
+          </div>
+        ),
+      };
     default:
       return `Unknown command: ${command}`;
   }
@@ -281,5 +318,7 @@ const Command = (props: CommandProps) => {
         })}
       </div>
     );
+  } else if (typeof command === "object") {
+    return <div>{command.component}</div>;
   }
 };
