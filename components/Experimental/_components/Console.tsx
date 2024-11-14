@@ -5,25 +5,33 @@ type Props = {};
 
 const Terminal = (props: Props) => {
   const [commandList, setCommandList] = useState<string[]>([]);
-  const commandRef: any = useRef(null);
+  const commandRef = useRef<HTMLInputElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
+
   const [command, setCommand] = useState("");
 
-  const handleCommandChange = (e: any) => {
+  const handleCommandChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCommand(e.target.value);
   };
 
-  const handleKeyDown = (e: any) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      setCommandList((prev: any) => [...prev, command]);
+      setCommandList((prev) => [...prev, command]);
       setCommand("");
     }
   };
 
   const handleFocusToCommand = () => {
-    if (commandRef.current) {
-      commandRef.current.focus();
-    }
+    commandRef.current?.focus();
   };
+
+  // Scroll to the bottom whenever commandList changes
+  useEffect(() => {
+    terminalRef.current?.scrollTo({
+      top: terminalRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [commandList]);
 
   return (
     <div>
@@ -53,6 +61,7 @@ const Terminal = (props: Props) => {
         </div>
         <div className="w-full selection:bg-white selection:text-black bg-zinc-200 h-[200px] appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
           <div
+            ref={terminalRef} // Attach terminalRef to the container div
             onClick={handleFocusToCommand}
             className="overflow-y-scroll h-[160px] pl-2 select-none"
           >
@@ -134,15 +143,89 @@ const getCommandResponse = (command: string, setValue: any) => {
       ];
 
     case "echo":
-      return [{ description: args }]; // Return the additional text as output
+      return [{ description: args }];
+    case "hello":
+      return [{ title: "Hello!", description: "World!" }];
 
     case "help":
       return [
-        { title: "echo", description: "Displays the provided text." },
-        { title: "kill", description: "If you don't want to see me anymore." },
-        { title: "help", description: "Displays this help message." },
-        { title: "clear", description: "Clears the console." },
-        { title: "exit", description: "Exits the console." },
+        {
+          title: "echo",
+          description: "Displays the provided text.",
+          divider: ":",
+        },
+        {
+          title: "kill",
+          description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "help | commands | /? | /help",
+          description: "Displays this help message.",
+          divider: ":",
+        },
+        { title: "clear", description: "Clears the console.", divider: ":" },
+        { title: "exit", description: "Exits the console.", divider: ":" },
+      ];
+    case "commands":
+      return [
+        {
+          title: "echo",
+          description: "Displays the provided text.",
+          divider: ":",
+        },
+        {
+          title: "kill",
+          description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "help | commands | /? | /help",
+          description: "Displays this help message.",
+          divider: ":",
+        },
+        { title: "clear", description: "Clears the console.", divider: ":" },
+        { title: "exit", description: "Exits the console.", divider: ":" },
+      ];
+    case "/?":
+      return [
+        {
+          title: "echo",
+          description: "Displays the provided text.",
+          divider: ":",
+        },
+        {
+          title: "kill",
+          description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "help | commands | /? | /help",
+          description: "Displays this help message.",
+          divider: ":",
+        },
+        { title: "clear", description: "Clears the console.", divider: ":" },
+        { title: "exit", description: "Exits the console.", divider: ":" },
+      ];
+    case "/help":
+      return [
+        {
+          title: "echo",
+          description: "Displays the provided text.",
+          divider: ":",
+        },
+        {
+          title: "kill",
+          description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "help | commands | /? | /help",
+          description: "Displays this help message.",
+          divider: ":",
+        },
+        { title: "clear", description: "Clears the console.", divider: ":" },
+        { title: "exit", description: "Exits the console.", divider: ":" },
       ];
 
     default:
@@ -172,7 +255,12 @@ const Command = (props: CommandProps) => {
           return (
             <div key={index}>
               <div className="flex gap-1 items-center">
-                {item.title && <div className="font-bold">{item.title} - </div>}
+                {item.title && (
+                  <div className="font-bold">
+                    {item.title}
+                    {item.divider && item.divider}
+                  </div>
+                )}
                 {item.description && (
                   <div className="text-xs">{item.description}</div>
                 )}
