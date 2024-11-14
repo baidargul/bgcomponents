@@ -66,7 +66,7 @@ const Terminal = (props: Props) => {
             <ControlBoxControl type="close" />
             <ControlBoxControl type="maximize" />
             <ControlBoxControl type="minimize" />
-            <div className="text-xs text-white tracking-widest flex items-center gap-1">
+            <div className="text-xs text-white tracking-widest flex items-center gap-1 select-none">
               BAIDAR CLI{" "}
               <span className="animate-pulse">
                 {new Date(currentTime).toLocaleTimeString()}
@@ -126,9 +126,14 @@ const ControlBoxControl = (props: ControlBoxControlProps) => {
 
   return (
     <div
-      className="w-3 h-3 rounded-full"
+      className="w-3 h-3 rounded-full relative flex justify-center items-center cursor-pointer"
       style={{ backgroundColor: color }}
-    ></div>
+    >
+      <div
+        className="w-2 h-2 absolute z-10 mix-blend-multiply opacity-0 hover:opacity-100 rounded-full"
+        style={{ backgroundColor: color }}
+      ></div>
+    </div>
   );
 };
 
