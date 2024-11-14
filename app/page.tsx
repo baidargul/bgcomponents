@@ -1,5 +1,6 @@
 import AddNoise from "@/components/Experimental/_components/AddNoise";
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
+import Terminal from "@/components/Experimental/_components/Console";
 import Lamp from "@/components/Experimental/_components/Lamp";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
 import ProjectRow from "@/components/Experimental/_components/ProjectRow";
@@ -188,6 +189,9 @@ export default function Home() {
           color={[173, 255, 47]} // Green Yellow
           glowColor={[173, 255, 47]}
         />
+      </div>
+      <div className="my-10 p-5">
+        <Terminal />
       </div>
     </div>
   );
