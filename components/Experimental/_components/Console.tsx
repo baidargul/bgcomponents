@@ -227,7 +227,7 @@ const getCommandResponse = (
         },
         {
           title: "hack",
-          description: "🤫",
+          description: "⚠️ 🤫 ❌",
           divider: ":",
         },
         {
