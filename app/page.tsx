@@ -1,4 +1,5 @@
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
+import Lamp from "@/components/Experimental/_components/Lamp";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
 import ProjectRow from "@/components/Experimental/_components/ProjectRow";
 import WiggleWrapper from "@/components/Experimental/_components/WiggleWrapper";
@@ -10,7 +11,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col overflow-hidden">
       <div className="grid grid-cols-3 justify-items-center items-center place-items-center p-10 group ">
         <div className="group-hover:skew-x-0 group-hover:scale-100 group-hover:blur-0 blur-lg skew-x-2 transition-all duration-1000   ease-in-out">
           <WiggleWrapper>
@@ -57,7 +58,7 @@ export default function Home() {
           </WiggleWrapper>
         </div>
         <WiggleWrapper>
-          <WindowImage size="medium" className="w-[600px]" />
+          <WindowImage size="medium" className="w-[600px] rounded-full" />
           <MouseGravity>
             <div className="text-5xl flex items-center gap-1 justify-center font-semibold tracking-wide text-center mt-10 duration-1000 ease-in-out">
               <div>I'M</div>
@@ -133,6 +134,9 @@ export default function Home() {
             );
           })}
         </div>
+      </div>
+      <div className="p-2 w-full h-[440px] bg-zinc-900 flex justify-center items-center">
+        <Lamp lampWidth={200} glowWidth={30} size={2} />
       </div>
     </div>
   );
