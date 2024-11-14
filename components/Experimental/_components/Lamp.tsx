@@ -72,6 +72,10 @@ const Lamp = (props: Props) => {
   return (
     <div className="w-full flex justify-center items-center relative">
       <div
+        className=" w-[80%] rounded-full absolute top-0 z-10 mix-blend-color-dodge blur-sm"
+        style={{ backgroundColor: color, height: size }}
+      ></div>
+      <div
         className={`${lampWidth} h-[220px] flex justify-center items-start relative overflow-hidden`}
       >
         {/* Lamp body */}
