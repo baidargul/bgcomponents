@@ -7,6 +7,7 @@ const Terminal = (props: Props) => {
   const [commandList, setCommandList] = useState<string[]>([]);
   const commandRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const [command, setCommand] = useState("");
 
@@ -33,6 +34,14 @@ const Terminal = (props: Props) => {
     });
   }, [commandList]);
 
+  useEffect(() => {
+    setCommandList(["help"]);
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
       <style>
@@ -53,10 +62,16 @@ const Terminal = (props: Props) => {
 
       <div>
         <div className="py-3 w-full bg-zinc-900 relative flex gap-2 items-center rounded-t-md">
-          <div className="absolute left-2 z-10 flex gap-2">
+          <div className="absolute items-center left-2 z-10 flex gap-2">
             <ControlBoxControl type="close" />
             <ControlBoxControl type="maximize" />
             <ControlBoxControl type="minimize" />
+            <div className="text-xs text-white tracking-widest flex items-center gap-1">
+              BAIDAR CLI{" "}
+              <span className="animate-pulse">
+                {new Date(currentTime).toLocaleTimeString()}
+              </span>
+            </div>
           </div>
         </div>
         <div className="w-full selection:bg-white selection:text-black bg-zinc-200 h-[340px] rounded-b-md appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
