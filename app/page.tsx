@@ -112,7 +112,9 @@ export default function Home() {
         <FrontendBackendServices />
       </div>
       <div className="my-10 grid grid-cols-[1.2fr_2fr]">
-        <div>This is other container</div>
+        <div className="p-2 bg-zinc-100 flex justify-center items-center">
+          <div>Place content here</div>
+        </div>
         <div>
           {Projects.map((project, index) => {
             return (
