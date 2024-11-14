@@ -136,7 +136,55 @@ export default function Home() {
         </div>
       </div>
       <div className="p-2 w-full h-[440px] bg-zinc-900 flex justify-center items-center">
-        <Lamp lampWidth={200} glowWidth={30} size={2} />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[255, 99, 71]} // Tomato Red
+          glowColor={[255, 99, 71]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[138, 43, 226]} // Blue Violet
+          glowColor={[138, 43, 226]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[60, 179, 113]} // Medium Sea Green
+          glowColor={[60, 179, 113]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[255, 215, 0]} // Gold
+          glowColor={[255, 215, 0]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[255, 20, 147]} // Deep Pink
+          glowColor={[255, 20, 147]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[0, 191, 255]} // Deep Sky Blue
+          glowColor={[0, 191, 255]}
+        />
+        <Lamp
+          lampWidth={200}
+          glowWidth={30}
+          size={4}
+          color={[173, 255, 47]} // Green Yellow
+          glowColor={[173, 255, 47]}
+        />
       </div>
     </div>
   );
