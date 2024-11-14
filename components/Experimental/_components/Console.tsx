@@ -27,6 +27,22 @@ const Terminal = (props: Props) => {
 
   return (
     <div>
+      <style>
+        {`
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #333; /* Track color */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #666; /* Thumb color */
+      border-radius: 5px;
+    }
+  `}
+      </style>
+
       <div>
         <div className="py-3 w-full bg-zinc-900 relative flex gap-2 items-center rounded-t-md">
           <div className="absolute left-2 z-10 flex gap-2">
@@ -104,6 +120,7 @@ const getCommandResponse = (command: string, setValue: any) => {
       break;
 
     default:
+      setValue((prev: any) => [...prev, `Unknown command: ${command}`]);
       break;
   }
 };
