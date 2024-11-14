@@ -190,7 +190,7 @@ export default function Home() {
           glowColor={[173, 255, 47]}
         />
       </div>
-      <div className="my-10 p-5">
+      <div className="my-10 p-5 w-[800px]">
         <Terminal />
       </div>
     </div>

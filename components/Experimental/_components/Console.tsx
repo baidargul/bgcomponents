@@ -59,11 +59,11 @@ const Terminal = (props: Props) => {
             <ControlBoxControl type="minimize" />
           </div>
         </div>
-        <div className="w-full selection:bg-white selection:text-black bg-zinc-200 h-[200px] appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
+        <div className="w-full selection:bg-white selection:text-black bg-zinc-200 h-[340px] rounded-b-md appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
           <div
             ref={terminalRef} // Attach terminalRef to the container div
             onClick={handleFocusToCommand}
-            className="overflow-y-scroll h-[160px] pl-2 select-none"
+            className="overflow-y-scroll h-[300px] pl-2 select-none"
           >
             {commandList.map((item, index) => {
               return (
@@ -160,6 +160,21 @@ const getCommandResponse = (command: string, setValue: any) => {
           divider: ":",
         },
         {
+          title: "about",
+          description: "About me. if you're interested.",
+          divider: ":",
+        },
+        {
+          title: "ssh",
+          description: "SSH to a remote server.",
+          divider: ":",
+        },
+        {
+          title: "hack",
+          description: "🤫",
+          divider: ":",
+        },
+        {
           title: "help | commands | /? | /help",
           description: "Displays this help message.",
           divider: ":",
@@ -177,6 +192,21 @@ const getCommandResponse = (command: string, setValue: any) => {
         {
           title: "kill",
           description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "about",
+          description: "About me. if you're interested.",
+          divider: ":",
+        },
+        {
+          title: "ssh",
+          description: "SSH to a remote server.",
+          divider: ":",
+        },
+        {
+          title: "hack",
+          description: "🤫",
           divider: ":",
         },
         {
@@ -200,6 +230,21 @@ const getCommandResponse = (command: string, setValue: any) => {
           divider: ":",
         },
         {
+          title: "about",
+          description: "About me. if you're interested.",
+          divider: ":",
+        },
+        {
+          title: "ssh",
+          description: "SSH to a remote server.",
+          divider: ":",
+        },
+        {
+          title: "hack",
+          description: "🤫",
+          divider: ":",
+        },
+        {
           title: "help | commands | /? | /help",
           description: "Displays this help message.",
           divider: ":",
@@ -217,6 +262,21 @@ const getCommandResponse = (command: string, setValue: any) => {
         {
           title: "kill",
           description: "If you don't want to see me anymore.",
+          divider: ":",
+        },
+        {
+          title: "about",
+          description: "About me. if you're interested.",
+          divider: ":",
+        },
+        {
+          title: "ssh",
+          description: "SSH to a remote server.",
+          divider: ":",
+        },
+        {
+          title: "hack",
+          description: "🤫",
           divider: ":",
         },
         {
@@ -265,6 +325,20 @@ const getCommandResponse = (command: string, setValue: any) => {
           </div>
         ),
       };
+    case "ssh":
+      return [
+        {
+          title: "Seriously?",
+          description: "Didn't you realized yet this is a demo terminal!",
+        },
+      ];
+    case "hack":
+      return [
+        {
+          image: `https://media.giphy.com/media/YQitE4YNQNahy/giphy.gif`,
+          title: "ON IT!",
+        },
+      ];
     default:
       return `Unknown command: ${command}`;
   }
