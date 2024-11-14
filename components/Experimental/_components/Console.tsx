@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 type Props = {};
 
 const Terminal = (props: Props) => {
-  const [logs, setLogs] = useState([]);
+  const [commandList, setCommandList] = useState<string[]>([]);
   const commandRef: any = useRef(null);
   const [command, setCommand] = useState("");
 
@@ -14,7 +14,7 @@ const Terminal = (props: Props) => {
 
   const handleKeyDown = (e: any) => {
     if (e.key === "Enter") {
-      getCommandResponse(command, setLogs);
+      setCommandList((prev: any) => [...prev, command]);
       setCommand("");
     }
   };
@@ -51,13 +51,17 @@ const Terminal = (props: Props) => {
             <ControlBoxControl type="minimize" />
           </div>
         </div>
-        <div className="w-full selection:bg-white selection:text-black bg-zinc-400 h-[200px] appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
+        <div className="w-full selection:bg-white selection:text-black bg-zinc-200 h-[200px] appearance-none outline-none border-transparent ring-0 p-2 text-sm text-black font-mono tracking-widest relative">
           <div
             onClick={handleFocusToCommand}
             className="overflow-y-scroll h-[160px] pl-2 select-none"
           >
-            {logs.map((item, index) => {
-              return <div key={index}>{item}</div>;
+            {commandList.map((item, index) => {
+              return (
+                <div key={index}>
+                  <Command command={item} setCommandList={setCommandList} />
+                </div>
+              );
             })}
           </div>
           <div className="absolute bottom-2 left-2 tracking-widest font-bold w-full pl-2 flex">
@@ -105,22 +109,89 @@ const ControlBoxControl = (props: ControlBoxControlProps) => {
 };
 
 const getCommandResponse = (command: string, setValue: any) => {
-  switch (command) {
+  const mainCommand = command.split(" ")[0].toLocaleLowerCase(); // Extract the main command (e.g., "echo")
+  const args = command.split(" ").slice(1).join(" "); // Get any additional arguments after the command
+
+  switch (mainCommand) {
     case "clear":
+    case "cls":
+    case "clear console":
+    case "new":
       setValue([]);
-      break;
+      return null;
+
+    case "exit":
+      setValue([]);
+      return null;
+
+    case "kill":
+      return [
+        {
+          title: "Goodbye!",
+          description: "Cruel world!",
+          image: "https://media.giphy.com/media/uC8SQoaY5EHhC/giphy.gif",
+        },
+      ];
+
+    case "echo":
+      return [{ description: args }]; // Return the additional text as output
 
     case "help":
-      setValue((prev: any) => [
-        ...prev,
-        "clear - clears the console",
-        "help - shows this message",
-        "exit - exits the console",
-      ]);
-      break;
+      return [
+        { title: "echo", description: "Displays the provided text." },
+        { title: "kill", description: "If you don't want to see me anymore." },
+        { title: "help", description: "Displays this help message." },
+        { title: "clear", description: "Clears the console." },
+        { title: "exit", description: "Exits the console." },
+      ];
 
     default:
-      setValue((prev: any) => [...prev, `Unknown command: ${command}`]);
-      break;
+      return `Unknown command: ${command}`;
+  }
+};
+
+type CommandProps = {
+  command: string;
+  setCommandList: any;
+};
+
+const Command = (props: CommandProps) => {
+  const command = getCommandResponse(props.command, props.setCommandList);
+
+  if (!command) {
+    return null;
+  }
+
+  if (typeof command === "string") {
+    return <div>{command}</div>;
+  } else if (Array.isArray(command)) {
+    return (
+      <div>
+        <div className="text-cyan-800 font-bold">{`> ${props.command}`}</div>
+        {command.map((item: any, index) => {
+          return (
+            <div key={index}>
+              <div className="flex gap-1 items-center">
+                {item.title && <div className="font-bold">{item.title} - </div>}
+                {item.description && (
+                  <div className="text-xs">{item.description}</div>
+                )}
+              </div>
+              {item.image && (
+                <div>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    width={300}
+                    height={300}
+                    className="rounded-md pointer-events-none select-none object-contain"
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 };
