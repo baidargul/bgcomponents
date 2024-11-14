@@ -97,7 +97,7 @@ const Lamp = (props: Props) => {
           {/* Downward light glow */}
           <div
             id="lampglow"
-            className={`absolute ${glowFallOff} blur-[50px] -top-16 `}
+            className={`absolute ${glowFallOff} blur-[50px] opacity-50 -top-16 mix-blend-color-dodge`}
             style={{
               background: `radial-gradient(circle at 50% 0, ${color} ${intensity}, ${glowColor} ${glowRange})`,
               width: glowWidth,

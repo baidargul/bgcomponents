@@ -1,3 +1,4 @@
+import AddNoise from "@/components/Experimental/_components/AddNoise";
 import BackgroundWave from "@/components/Experimental/_components/BackgroundWave";
 import Lamp from "@/components/Experimental/_components/Lamp";
 import MouseGravity from "@/components/Experimental/_components/MouseGravity";
