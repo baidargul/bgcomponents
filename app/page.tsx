@@ -139,7 +139,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="p-2 w-full h-[440px] bg-zinc-900 flex justify-center items-center">
+      <div className="p-2 w-full -mb-44 pt-16 bg-zinc-900 flex justify-center items-center">
         <Lamp
           lampWidth={200}
           glowWidth={30}
@@ -200,7 +200,7 @@ export default function Home() {
             glowColor={[173, 255, 47]}
           />
           <div className="absolute top-3">
-            <div className=" text-center font-semibold tracking-wider uppercase bg-gradient-to-r from-lime-800 via-lime-300 to-lime-800 text-transparent bg-clip-text text-6xl">
+            <div className=" text-center font-semibold border-b-4 border-lime-700 pb-2 tracking-wider uppercase bg-gradient-to-r from-lime-800 via-lime-300 to-lime-800 text-transparent bg-clip-text text-6xl">
               Backend
             </div>
           </div>
