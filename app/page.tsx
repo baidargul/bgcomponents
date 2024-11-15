@@ -190,8 +190,21 @@ export default function Home() {
           glowColor={[173, 255, 47]}
         />
       </div>
-      <div className="bg-zinc-600 grid grid-cols-[1fr_auto] p-2">
-        <div></div>
+      <div className="bg-zinc-900 grid grid-cols-[1fr_auto] justify-items-center place-items-center p-2">
+        <div className="w-[400px] relative flex flex-col justify-center items-center">
+          <Lamp
+            lampWidth={320}
+            glowWidth={70}
+            size={4}
+            color={[173, 255, 47]} // Green Yellow
+            glowColor={[173, 255, 47]}
+          />
+          <div className="absolute top-3">
+            <div className=" text-center font-semibold tracking-wider uppercase bg-gradient-to-r from-lime-800 via-lime-300 to-lime-800 text-transparent bg-clip-text text-6xl">
+              Backend
+            </div>
+          </div>
+        </div>
         <div className="my-10 p-5 w-[800px]">
           <Terminal />
         </div>
