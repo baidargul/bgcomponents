@@ -73,7 +73,7 @@ const Terminal = (props: Props) => {
       </style>
 
       <div>
-        <div className="py-3 w-full bg-zinc-900 relative flex gap-2 items-center rounded-t-md">
+        <div className="py-3 w-full bg-zinc-900 border border-zinc-700 relative flex gap-2 items-center rounded-t-md">
           <div className="absolute items-center left-2 z-10 flex gap-2">
             {!hackMode && <ControlBoxControl type="close" />}
             {!hackMode && <ControlBoxControl type="maximize" />}
