@@ -198,9 +198,10 @@ export default function Home() {
             size={4}
             color={[173, 255, 47]} // Green Yellow
             glowColor={[173, 255, 47]}
+            flicker
           />
           <div className="absolute top-3">
-            <div className=" text-center font-semibold border-b-4 border-lime-700 pb-2 tracking-wider uppercase bg-gradient-to-r from-lime-800 via-lime-300 to-lime-800 text-transparent bg-clip-text text-6xl">
+            <div className="selection:text-lime-500 selection:bg-zinc-900 text-center font-semibold border-b-4 border-lime-700 pb-2 tracking-wider uppercase bg-gradient-to-r from-lime-800 via-lime-300 to-lime-800 text-transparent bg-clip-text text-6xl">
               Backend
             </div>
           </div>

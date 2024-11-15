@@ -1,107 +1,95 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   size?: number;
   lampWidth: number;
   glowWidth: number;
-  intensity?:
-    | "0%"
-    | "5%"
-    | "10%"
-    | "15%"
-    | "20%"
-    | "25%"
-    | "30%"
-    | "35%"
-    | "40%"
-    | "45%"
-    | "50%"
-    | "55%"
-    | "60%"
-    | "65%"
-    | "70%"
-    | "75%"
-    | "80%"
-    | "85%"
-    | "90%"
-    | "95%"
-    | "100%";
+  intensity?: `${number}%`; // Simplified type for percentages
   glowFallOff?: number;
-  glowRange?:
-    | "0%"
-    | "5%"
-    | "10%"
-    | "15%"
-    | "20%"
-    | "25%"
-    | "30%"
-    | "35%"
-    | "40%"
-    | "45%"
-    | "50%"
-    | "55%"
-    | "60%"
-    | "65%"
-    | "70%"
-    | "75%"
-    | "80%"
-    | "85%"
-    | "90%"
-    | "95%"
-    | "100%";
-  color?: number[];
-  glowColor?: number[];
+  glowRange?: `${number}%`;
+  color?: [number, number, number]; // RGB array
+  glowColor?: [number, number, number];
+  flicker?: boolean; // Enable/disable flicker
 };
 
-const Lamp = (props: Props) => {
-  const lampWidth = `w-[${props.lampWidth}px]`;
-  const glowWidth = props.glowWidth ? `${props.glowWidth}px` : "100px";
-  const glowFallOff = props.glowFallOff
-    ? `h-[${props.glowFallOff}px]`
-    : `h-[120px]`;
-  const intensity = props.intensity ? `${props.intensity}` : "0%";
-  const glowRange = props.glowRange ? `${props.glowRange}` : "100%";
-  const size = props.size ? `${props.size}px` : "2px";
-  const color = props.color
-    ? `rgba(${props.color[0]}, ${props.color[1]}, ${props.color[2]}, 1)`
-    : `rgba(255, 255, 255, 1)`;
-  const glowColor = props.glowColor
-    ? `rgba(${props.glowColor[0]}, ${props.glowColor[1]}, ${props.glowColor[2]}, .5)`
-    : `rgba(255, 255, 255, .5)`;
+const Lamp: React.FC<Props> = ({
+  size = 2,
+  lampWidth,
+  glowWidth = 100,
+  intensity = "0%",
+  glowFallOff = 120,
+  glowRange = "100%",
+  color = [255, 255, 255],
+  glowColor = [255, 255, 255],
+  flicker = false,
+}) => {
+  const [opacity, setOpacity] = useState(1);
+
+  const lampColor = `rgba(${color.join(", ")}, 1)`;
+  const lampGlowColor = `rgba(${glowColor.join(", ")}, 0.5)`;
+
+  // Generate a random number within a range
+  const getRandom = (min: number, max: number) =>
+    Math.random() * (max - min) + min;
+
+  // Organic flicker effect
+  useEffect(() => {
+    if (flicker) {
+      let flickerInterval: NodeJS.Timeout;
+
+      const startFlicker = () => {
+        setOpacity(getRandom(0.6, 1)); // Randomize opacity between 0.6 and 1
+        flickerInterval = setTimeout(startFlicker, getRandom(50, 300)); // Randomize interval between 50ms and 300ms
+      };
+
+      startFlicker();
+      return () => clearTimeout(flickerInterval);
+    }
+  }, [flicker]);
 
   return (
-    <div className="w-full flex justify-center items-center relative">
+    <div className="w-full flex justify-center items-center relative mix-blend-color-dodge">
+      {/* Top glow */}
       <div
-        className=" w-[80%] rounded-full absolute top-0 z-10 mix-blend-color-dodge blur-sm"
-        style={{ backgroundColor: color, height: size }}
+        className="w-[80%] rounded-full absolute top-0 z-10 mix-blend-color-dodge blur-sm"
+        style={{
+          backgroundColor: lampColor,
+          height: `${size}px`,
+        }}
       ></div>
+
+      {/* Lamp body and glow */}
       <div
-        className={`${lampWidth} h-[220px] flex justify-center items-start relative overflow-hidden`}
+        className={`w-[${lampWidth}px] h-[220px] flex justify-center items-start relative overflow-hidden`}
       >
         {/* Lamp body */}
         <div
-          id="lampbody"
-          className={`w-full rounded-full mx-1`}
+          className="w-full rounded-full mx-1"
           style={{
-            boxShadow: `0 0 10px ${color}`,
-            height: size,
-            backgroundColor: color,
+            boxShadow: `0 0 10px ${lampColor}`,
+            height: `${size}px`,
+            backgroundColor: lampColor,
+            opacity, // Apply organic opacity here
           }}
         ></div>
 
-        {/* Wrapper with overflow-hidden to keep glow below the lamp */}
+        {/* Wrapper for downward glow */}
         <div
-          className="absolute w-[140%] flex justify-center items-center overflow-hidden h-full top-[4px] "
-          style={{ pointerEvents: "none", borderRadius: "23%" }}
+          className="absolute w-[140%] flex justify-center items-center overflow-hidden h-full top-[4px]"
+          style={{
+            pointerEvents: "none",
+            borderRadius: "23%",
+          }}
         >
-          {/* Downward light glow */}
+          {/* Downward glow */}
           <div
-            id="lampglow"
-            className={`absolute ${glowFallOff} blur-[50px] opacity-50 -top-16 mix-blend-color-dodge`}
+            className={`absolute h-[${glowFallOff}px] blur-[50px] opacity-50 -top-16 mix-blend-color-dodge`}
             style={{
-              background: `radial-gradient(circle at 50% 0, ${color} ${intensity}, ${glowColor} ${glowRange})`,
-              width: glowWidth,
+              background: `radial-gradient(circle at 50% 0, ${lampColor} ${intensity}, ${lampGlowColor} ${glowRange})`,
+              width: `${glowWidth}px`,
               borderRadius: "23%",
+              opacity, // Apply the same organic opacity to the glow
             }}
           ></div>
         </div>
