@@ -49,7 +49,7 @@ const Lamp: React.FC<Props> = ({
   }, [flicker]);
 
   return (
-    <div className="w-full flex justify-center items-center relative mix-blend-color-dodge">
+    <div className="w-full flex justify-center items-center relative">
       {/* Top glow */}
       <div
         className="w-[80%] rounded-full absolute top-0 z-10 mix-blend-color-dodge blur-sm"

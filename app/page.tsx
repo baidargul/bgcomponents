@@ -146,6 +146,8 @@ export default function Home() {
           size={4}
           color={[255, 99, 71]} // Tomato Red
           glowColor={[255, 99, 71]}
+          intensity="100%"
+          flicker
         />
         <Lamp
           lampWidth={200}
@@ -167,6 +169,8 @@ export default function Home() {
           size={4}
           color={[255, 215, 0]} // Gold
           glowColor={[255, 215, 0]}
+          intensity="10%"
+          flicker
         />
         <Lamp
           lampWidth={200}
@@ -181,6 +185,7 @@ export default function Home() {
           size={4}
           color={[0, 191, 255]} // Deep Sky Blue
           glowColor={[0, 191, 255]}
+          flicker
         />
         <Lamp
           lampWidth={200}
@@ -188,6 +193,7 @@ export default function Home() {
           size={4}
           color={[173, 255, 47]} // Green Yellow
           glowColor={[173, 255, 47]}
+          intensity="20%"
         />
       </div>
       <div className="bg-zinc-900 grid grid-cols-[1fr_auto] justify-items-center place-items-center p-2">
