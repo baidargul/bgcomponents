@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "BG Components",
+  title: "In development",
   description: "loving place to experiment something crazy",
 };
 

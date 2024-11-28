@@ -60,7 +60,11 @@ export default function Home() {
           </WiggleWrapper>
         </div>
         <WiggleWrapper>
-          <WindowImage size="medium" className="w-[600px] rounded-full" />
+          <WindowImage
+            size="medium"
+            className="w-[400px] rounded-md"
+            imageUrl="/images/me-raw.png"
+          />
           <MouseGravity>
             <div className="text-5xl flex items-center gap-1 justify-center font-semibold tracking-wide text-center mt-10 duration-1000 ease-in-out">
               <div>I'M</div>
