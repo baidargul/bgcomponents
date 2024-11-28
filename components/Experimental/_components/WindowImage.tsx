@@ -67,11 +67,10 @@ const WindowImage = (props: Props) => {
         props.className && props.className
       }`}
     >
-      <Image
+      <img
         src={props.imageUrl ? props.imageUrl : "/images/sample.jpg"}
         width={800}
         height={800}
-        quality={100}
         alt="sampleImage"
         className="object-cover w-full h-full transition-transform duration-300 ease-out select-none pointer-events-none"
         style={{
